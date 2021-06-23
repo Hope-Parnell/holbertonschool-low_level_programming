@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-#generates assembly code from a c file
 gcc $CFILE -S

@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-#runs C file through preprocesser then stores output in file named "c"
 gcc -E $CFILE -o c
