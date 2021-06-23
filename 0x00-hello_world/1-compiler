@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+#compliles c file without linking
 gcc $CFILE -c

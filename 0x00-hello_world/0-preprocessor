@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+#compiles C file into executable file named "c"
 gcc $CFILE -o c
