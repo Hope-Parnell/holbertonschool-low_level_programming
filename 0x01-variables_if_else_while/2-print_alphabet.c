@@ -1,6 +1,6 @@
 #include<stdio.h>
 /**
- * main - prints the lowercase alphabet one letter per line
+ * main - prints the lowercase alphabet
  *
  * Return: 0
  */
@@ -12,7 +12,7 @@ int main(void)
 	for (c = 'a' ; c <= 'z' ; c++)
 	{
 		putchar(c);
-		putchar('\n');
 	}
+	putchar('\n');
 	return (0);
 }
