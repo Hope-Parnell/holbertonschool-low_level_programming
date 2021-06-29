@@ -68,7 +68,7 @@ void print100s(int p)
 
 void print10s(int p)
 {
-	_putchar(';');
+	_putchar(',');
 	_putchar(' ');
 	_putchar(' ');
 	_putchar((p / 10) + '0');
