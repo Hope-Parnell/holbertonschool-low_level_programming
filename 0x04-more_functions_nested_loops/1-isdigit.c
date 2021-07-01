@@ -1,12 +1,12 @@
 #include "holberton.h"
 /**
- * _isupper - checks if input character is a digit
+ * _isdigit - checks if input character is a digit
  * @c: the ascii value of the inputted character
  *
  * Return: 1 if digit, 0 otherwise
  */
 
-int _isupper(int c)
+int _isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);
