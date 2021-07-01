@@ -3,7 +3,7 @@
 /**
  * main - finds the highest prime factor of a number
  *
- * Return:
+ * Return: 0
  */
 
 int main(void)
