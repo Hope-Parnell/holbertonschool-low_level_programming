@@ -17,11 +17,16 @@ char *cap_string(char *s)
 	{
 		if (s[i] >= 'a' && s[i] <= 'z')
 		{
-			for (j = 0; j < 14; j++)
+			if (i == 0)
 			{
-				if (i == 0 || (s[i - 1] == sep[j]))
+				s[i] -= 32;
+			}
+			else
+			{
+				for (j = 0; j < 14; j++)
 				{
-					s[i] -= 32;
+					if (s[i - 1] == sep[j])
+						s[i] -= 32;
 				}
 			}
 		}
