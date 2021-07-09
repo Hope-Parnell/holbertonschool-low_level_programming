@@ -20,8 +20,11 @@ char *_strncpy(char *dest, char *src, int n)
 		src++;
 		n--;
 	}
-	if (*src == '\0')
-		*dest = *src;
+	while (n > 0)
+	{
+		*dest = '\0';
+		n--;
+	}
 
 	return (ret);
 }
