@@ -26,22 +26,16 @@ int main(int argc, char *argv[])
 	}
 	while (change != 0)
 	{
-		while (change / 25 > 0)
-		{
+		if (change >= 25)
 			change -= 25;
-			coins++;
-		}
-		while (change / 10 > 0)
-		{
+		else if (change >= 10)
 			change -= 10;
-			coins++;
-		}
-		while (change / 2 > 0)
-		{
+		else if (change >= 5)
+			change -= 5;
+		else if (change >= 2)
 			change -= 2;
-			coins++;
-		}
-		change--;
+		else if (change >= 1)
+			change--;
 		coins++;
 	}
 	printf("%d\n", coins);
