@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
-	while (change > 0)
+	while (change != 0)
 	{
 		while (change / 25 > 0)
 		{
