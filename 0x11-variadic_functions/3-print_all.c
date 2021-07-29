@@ -8,18 +8,13 @@
 
 void print_all(const char * const format, ...)
 {
-	int i = 0, n = 0, skip;
+	int i = 0, skip;
 	char *str;
 	va_list print;
 
-	while(format[n] != '\0')
-	{
-		n++;
-	}
 	va_start(print, format);
-	while (format != NULL && i < n)
-	{
-		skip = 0;
+	while (format != NULL && format[i] != '\0')
+	{ skip = 0;
 		switch (format[i])
 		{
 		case 'c':
@@ -39,12 +34,17 @@ void print_all(const char * const format, ...)
 			break;
 		default:
 			skip = 1;
-			break;
-		}
-		if (i != (n - 1) && skip == 0)
-			printf(", ");
+			break; }
 		i++;
-	}
+		while (skip == 0 && format[i] != '\0')
+		{
+			switch (format[i])
+			{ case 'c': case 'i': case 'f': case 's':
+			{	printf(", ");
+				skip = 1;
+				break; }
+			default:
+				i++;
+				break; }}}
 	printf("\n");
-	va_end(print);
-}
+	va_end(print); }
