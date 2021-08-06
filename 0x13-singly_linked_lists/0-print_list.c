@@ -2,7 +2,7 @@
 
 /**
  * print_list - prints all elements of a singly linked list
- * @h - pointer to start of list
+ * @h: pointer to start of list
  *
  * Return: number of nodes
  */
@@ -13,7 +13,7 @@ size_t print_list(const list_t *h)
 
 	if (!h)
 		return (0);
-	
+
 	while (ptr)
 	{
 		if (!ptr->str)
