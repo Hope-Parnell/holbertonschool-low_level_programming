@@ -2,10 +2,10 @@
 
 /**
  * get_nodeint_at_index - finds a node in a singly linked list
- * 
+ *
  * @head: singly linked list
- * @index: index of the node to find 
- * Return: pointer to node, NULL if the node does not exist 
+ * @index: index of the node to find
+ * Return: pointer to node, NULL if the node does not exist
  */
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
