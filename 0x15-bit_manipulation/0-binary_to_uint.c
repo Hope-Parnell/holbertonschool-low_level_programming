@@ -17,7 +17,11 @@ int _pow_recursion(int x, int y)
 	else
 		return (x * _pow_recursion(x, y - 1));
 }
-
+/**
+ * binary_to_uint - converts a binary string to an unsigned int
+ * @b: string containing a number in binary
+ * Return: converted unsigned int, 0 on invalid input
+ */
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int n = 0;
