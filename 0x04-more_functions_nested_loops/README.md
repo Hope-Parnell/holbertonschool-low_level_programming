@@ -20,3 +20,9 @@ prints a diagonal line of specified length
 prints a square of specifed size
 ### 9-fizz_buzz
 prints numbers 1 thru 100 replacing multiples of 3 with "Fizz", mutiples of 5 with "Buzz", and mutiples of both with "FizzBuzz"
+### 10-print_triangle
+prints a triangle of specified size
+### 100-prime_factor
+finds the highest prime factor of a number
+### 101-print_number
+prints an integer one digit at a time
