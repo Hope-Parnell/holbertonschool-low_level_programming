@@ -18,6 +18,8 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 		exit(print_exit(97, NULL, 0));
 	file_from = open(argv[1], O_RDONLY);
+	if (!argv[1])
+		exit(print_exit(98, argv[1], file_from));
 	if (file_from < 0)
 		exit(print_exit(98, argv[1], file_from));
 	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
