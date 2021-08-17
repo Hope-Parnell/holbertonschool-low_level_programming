@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		exit(print_exit(99, argv[2], file_to));
 	}
 	while ((fr = read(file_from, buffer, 1024)) && fr > 0 && fw >= 0)
-		write(file_to, buffer, fr);
+		fw = write(file_to, buffer, fr);
 	fc = close(file_from);
 	if (fc < 0)
 		exit(print_exit(100, argv[1], file_from));
