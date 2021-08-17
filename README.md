@@ -44,3 +44,5 @@ This project repository is for my use at Holberton School for learning to code u
 	further explores singly linked lists
 ### 0x15-bit_manipulation
 	introduces using bit manipulations and bit operators
+### 0x16-file_io
+	introduces system callsfor file input and output: open, close, read, and write
