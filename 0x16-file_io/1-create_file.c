@@ -18,10 +18,14 @@ int create_file(const char *filename, char *text_content)
 	if (fd < 0)
 		return (-1);
 	if (!text_content)
+	{
+		close(fd);
 		return (1);
+	}
 	for (l = 0; text_content[l] != '\0'; l++)
 	;
 	fw = write(fd, text_content, l);
+	close(fd);
 	if (fw < 0)
 		return (-1);
 	return (1);
