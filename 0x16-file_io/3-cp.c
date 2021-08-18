@@ -30,7 +30,8 @@ int main(int argc, char *argv[])
 			exit(print_exit(100, argv[1], file_from));
 		exit(print_exit(99, argv[2], file_to));
 	}
-	while ((file_read = read(file_from, buffer, 1024)) && file_read > 0 && file_write >= 0)
+	while ((file_read = read(file_from, buffer, 1024)) && file_read > 0
+			&& file_write >= 0)
 		file_write = write(file_to, buffer, file_read);
 	file_close = close(file_from);
 	if (file_close < 0)
