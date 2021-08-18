@@ -12,35 +12,35 @@ int print_exit(int exit_number, char *filename, int fd);
 
 int main(int argc, char *argv[])
 {
-	int file_from, file_to, fr, fw = 0, fc;
+	int file_from, file_to, file_read, file_write = 0, file_close;
 	char buffer[1024];
 
 	if (argc != 3)
 		exit(print_exit(97, NULL, 0));
-	file_from = open(argv[1], O_RDONLY);
 	if (!argv[1])
 		exit(print_exit(98, argv[1], 0));
+	file_from = open(argv[1], O_RDONLY);
 	if (file_from < 0)
 		exit(print_exit(98, argv[1], file_from));
 	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (file_to < 0)
 	{
-		fc = close(file_from);
-		if (fc != 0)
+		file_close = close(file_from);
+		if (file_close != 0)
 			exit(print_exit(100, argv[1], file_from));
 		exit(print_exit(99, argv[2], file_to));
 	}
-	while ((fr = read(file_from, buffer, 1024)) && fr > 0 && fw >= 0)
-		fw = write(file_to, buffer, fr);
-	fc = close(file_from);
-	if (fc < 0)
+	while ((file_read = read(file_from, buffer, 1024)) && file_read > 0 && file_write >= 0)
+		file_write = write(file_to, buffer, file_read);
+	file_close = close(file_from);
+	if (file_close < 0)
 		exit(print_exit(100, argv[1], file_from));
-	fc = close(file_to);
-	if (fc < 0)
+	file_close = close(file_to);
+	if (file_close < 0)
 		exit(print_exit(100, argv[2], file_to));
-	if (fw < 0)
+	if (file_write < 0)
 		exit(print_exit(99, argv[2], file_to));
-	if (fr < 0)
+	if (file_read < 0)
 		exit(print_exit(98, argv[1], file_from));
 	return (0);
 }
