@@ -42,7 +42,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	return (new);
 }
-
+/*If compiling along with 5-get_dnodeint.c remove everything below this point*/
 /**
  * get_dnodeint_at_index - finds a node at a specific index
  * @head: pointer to list
