@@ -19,7 +19,6 @@ Hoblerton School Project for learning how to use doubly linked lists in C progra
 ## 7-insert_dnodeint
 	function for adding a node to a doubly linked list at a specific index
 	* index starts at 0
-	* Needs functions defined in 2-add_dnodeint.c and 3-add_dnodeint_end.c
 ## 8-delete_dnodeint
 	function for deleting a node from a doubly linked list at a specific index
 	* index starts at 0
