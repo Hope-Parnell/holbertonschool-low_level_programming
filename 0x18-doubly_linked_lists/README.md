@@ -18,7 +18,10 @@ index starts at 0
 function for adding all integers stored in all nodes of a doubly linked list
 ## 7-insert_dnodeint
 function for adding a node to a doubly linked list at a specific index
-index starts at 0
+	* index starts at 0
+	* Needs functions defined in 2-add_dnodeint.c and 3-add_dnodeint_end.c
+	* If compiling along with 5-get_dnodeint.c remove the bottom function definition
 ## 8-delete_dnodeint
 function for deleting a node from a doubly linked list at a specific index
-index starts at 0
+	* index starts at 0
+	* If compiling along with 5-get_dnodeint.c remove the bottom function definition
