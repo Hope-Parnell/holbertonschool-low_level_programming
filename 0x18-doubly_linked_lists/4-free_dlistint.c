@@ -2,7 +2,7 @@
 
 /**
  * free_dlistint - frees all nodes in a doubly linked list
- * 
+ *
  * @head: pointer to the list
  */
 
