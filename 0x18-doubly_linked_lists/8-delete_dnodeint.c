@@ -14,7 +14,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (!*head)/*list is NULL*/
 		return (-1);
-	hide = get_dnodeint_at_index(*head, index);
+	hide = get_node(*head, index);
 	if (!hide) /*node does not exist at index*/
 		return (-1);
 	if (index == 0 && hide == *head)/*head was the actual head of the list*/
@@ -26,15 +26,14 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	free(hide);
 	return (0);
 }
-/*If compiling along with 5-get_dnodeint.c remove everything below this point*/
 /**
- * get_dnodeint_at_index - finds a node at a specific index
+ * get_node - finds a node at a specific index
  * @head: pointer to list
  * @index: which node to return
  * Return: node at index, NULL if nonexistant
  */
 
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+dlistint_t *get_node(dlistint_t *head, unsigned int index)
 {
 	unsigned int i;
 	dlistint_t *trueHead, *seek;

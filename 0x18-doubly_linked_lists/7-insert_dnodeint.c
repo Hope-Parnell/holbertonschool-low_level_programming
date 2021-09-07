@@ -21,7 +21,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	else
 	{
-		seek = get_dnodeint_at_index(*h, idx - 1);/*find prev node*/
+		seek = get_node(*h, idx - 1);/*find prev node*/
 		if (!seek)/*idx goes more than 1 beyond tail*/
 			return (NULL);
 		if (!seek->next)/*adding node after tail*/
@@ -42,15 +42,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	return (new);
 }
-/*If compiling along with 5-get_dnodeint.c remove everything below this point*/
 /**
- * get_dnodeint_at_index - finds a node at a specific index
+ * get_node - finds a node at a specific index
  * @head: pointer to list
  * @index: which node to return
  * Return: node at index, NULL if nonexistant
  */
 
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+dlistint_t *get_node(dlistint_t *head, unsigned int index)
 {
 	unsigned int i;
 	dlistint_t *trueHead, *seek;
