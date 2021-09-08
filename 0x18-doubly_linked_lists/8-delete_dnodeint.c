@@ -1,4 +1,5 @@
 #include "lists.h"
+dlistint_t *getNode(dlistint_t *head, unsigned int index);
 
 /**
  * delete_dnodeint_at_index - deletes a node from a linked list
@@ -14,7 +15,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (!*head)/*list is NULL*/
 		return (-1);
-	hide = get_node(*head, index);
+	hide = getNode(*head, index);
 	if (!hide) /*node does not exist at index*/
 		return (-1);
 	if (index == 0 && hide == *head)/*head was the actual head of the list*/
@@ -27,13 +28,13 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	return (0);
 }
 /**
- * get_node - finds a node at a specific index
+ * getNode - finds a node at a specific index
  * @head: pointer to list
  * @index: which node to return
  * Return: node at index, NULL if nonexistant
  */
 
-dlistint_t *get_node(dlistint_t *head, unsigned int index)
+dlistint_t *getNode(dlistint_t *head, unsigned int index)
 {
 	unsigned int i;
 	dlistint_t *trueHead, *seek;
