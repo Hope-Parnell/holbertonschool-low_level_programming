@@ -19,11 +19,26 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (!hide) /*node does not exist at index*/
 		return (-1);
 	if (index == 0 && hide == *head)/*head was the actual head of the list*/
-		*head = hide->next;
+	{
+		if (hide->next)
+			*head = hide->next;
+		else
+			*head = NULL;
+	}
 	if (hide->prev)
-		hide->prev->next = hide->next;
+	{
+		if (hide->next)
+			hide->prev->next = hide->next;
+		else
+			hide->prev->next = NULL;
+	}
 	if (hide->next)
-		hide->next->prev = hide->prev;
+	{
+		if (hide->prev)
+			hide->next->prev = hide->prev;
+		else
+			hide->next->prev = NULL;
+	}
 	free(hide);
 	return (0);
 }
