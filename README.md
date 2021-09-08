@@ -46,3 +46,5 @@ This project repository is for my use at Holberton School for learning to code u
 	introduces using bit manipulations and bit operators
 ### 0x16-file_io
 	introduces system calls for file input and output: open, close, read, and write
+### 0x18-doubly_linked_lists
+	introduces creating and using doubly linked lists
