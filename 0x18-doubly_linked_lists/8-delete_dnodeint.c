@@ -13,17 +13,25 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *hide;
 
-	if (!*head)/*list is NULL*/
+	if (!*head || !head)/*list is NULL*/
 		return (-1);
 	hide = getNode(*head, index);
 	if (!hide) /*node does not exist at index*/
 		return (-1);
-	if (index == 0 && hide == *head)/*head was the actual head of the list*/
+	if (index == 0)/*removing the head of the list*/
 	{
-		if (hide->next)
-			*head = hide->next;
-		else
-			*head = NULL;
+		if (!(*head)->prev)/*head is the actual head*/
+		{
+			if (hide->next)
+				*head = (*head)->next;
+			else /*there is only 1 node*/
+				*head = NULL;
+		}
+		else /*set the new head but don't move the pointer*/
+		{
+			if (hide->next)
+				hide->next->prev = NULL;
+		}
 	}
 	if (hide->prev)
 	{
