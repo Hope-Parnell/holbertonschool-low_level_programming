@@ -48,7 +48,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			hide->next->prev = NULL;
 	}
 	free(hide);
-	return (0);
+	return (1);
 }
 /**
  * getNode - finds a node at a specific index
