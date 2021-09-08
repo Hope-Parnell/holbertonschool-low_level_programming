@@ -78,35 +78,36 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *seek, *new;
 
-	if (!*h && idx != 0)
+	if (!*h && idx != 0)/*cannot add node beyond 0 if list nonexistant*/
 		return (NULL);
 	seek = *h;
-	if (idx == 0)
+	if (idx == 0)/*adding node to head of list*/
 	{
 		new = new_head(h, n);
 	}
-	else
+	else /*find the previous node and connect as needed*/
 	{
 		seek = get_node(*h, idx - 1);/*find prev node*/
 		if (!seek)/*idx goes more than 1 beyond tail*/
-			return (NULL);
-		if (!seek->next)/*adding node after tail*/
+			return (NULL);/*cannot create at given index*/
+		if (!seek->next)/*idx immediately after current tail*/
 		{
 			new = new_tail(h, n);
 		}
-		else
+		else/*new node will not be head or tail of list*/
 		{
 			new = malloc(sizeof(dlistint_t));
-			if (!new)
+			if (!new)/*malloc failed*/
 				return (NULL);
 			new->n = n;
+			/*connect new to rest of list*/
 			new->prev = seek;
 			new->next = seek->next;
 			seek->next = new;
 			new->next->prev = new;
 		}
 	}
-	return (new);
+	return (new);/*new successfully created and connected*/
 }
 /**
  * get_node - finds a node at a specific index

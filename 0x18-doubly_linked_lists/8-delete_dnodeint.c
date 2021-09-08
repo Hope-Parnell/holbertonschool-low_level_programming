@@ -33,22 +33,22 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 				hide->next->prev = NULL;
 		}
 	}
-	if (hide->prev)
+	if (hide->prev)/*there is a previous node*/
 	{
-		if (hide->next)
+		if (hide->next)/*there is a next node*/
 			hide->prev->next = hide->next;
 		else
 			hide->prev->next = NULL;
 	}
-	if (hide->next)
+	if (hide->next)/*there is a next node*/
 	{
-		if (hide->prev)
+		if (hide->prev)/*there is a previous node*/
 			hide->next->prev = hide->prev;
 		else
 			hide->next->prev = NULL;
 	}
 	free(hide);
-	return (1);
+	return (1);/*sucess*/
 }
 /**
  * getNode - finds a node at a specific index
@@ -62,7 +62,7 @@ dlistint_t *getNode(dlistint_t *head, unsigned int index)
 	unsigned int i;
 	dlistint_t *trueHead, *seek;
 
-	if (!head)
+	if (!head)/*no nodes in list*/
 		return (NULL);
 	trueHead = head;
 	while (trueHead->prev)/*find the head*/
@@ -74,7 +74,7 @@ dlistint_t *getNode(dlistint_t *head, unsigned int index)
 			return (NULL);
 		seek = seek->next;
 	}
-	if (!seek)
+	if (!seek)/*node does not exist*/
 		return (NULL);
 	return (seek);
 }

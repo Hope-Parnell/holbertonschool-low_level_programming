@@ -13,16 +13,16 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	dlistint_t *new, *trueHead;
 
 	new = malloc(sizeof(dlistint_t));
-	if (!new)
+	if (!new)/*malloc failed*/
 		return (NULL);
-	new->prev = NULL;
+	new->prev = NULL;/*makes new first node*/
 	new->n = n;
 	if (!*head)/*check if list is empty*/
 	{
-		new->next = NULL;
-		*head = new;
+		new->next = NULL;/*makes new last node*/
+		*head = new;/*set list to point to new node*/
 	}
-	else
+	else /*connect new to the rest of list*/
 	{
 		trueHead = *head;
 		while (trueHead->prev)/*make sure at actual head*/
@@ -30,5 +30,5 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		new->next = trueHead;
 		trueHead->prev = new;
 	}
-	return (new);
+	return (new);/*new node successfully made*/
 }

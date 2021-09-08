@@ -18,7 +18,7 @@ size_t dlistint_len(const dlistint_t *h)
 	while (head->prev) /*find the head*/
 		head = head->prev;
 	seek = head;
-	for (nodes = 0; seek != NULL; nodes++)/*print each integer*/
+	for (nodes = 0; seek != NULL; nodes++)/*count nodes until NULL*/
 	{
 		seek = seek->next;
 	}

@@ -27,6 +27,25 @@ int main(void)
     if (insert_dnodeint_at_index(&head, index, 4096) == NULL)
 		printf("node could not be added index %u\n", index);
     print_dlistint(head);
+	printf("-----------------\n");
+	index = 0;
+    if (insert_dnodeint_at_index(&head, index, 4096) == NULL)
+		printf("node could not be added index %u\n", index);
+    print_dlistint(head);
+	printf("-----------------\n");
+	index = 5;
+    if (insert_dnodeint_at_index(&head, index, 4096) == NULL)
+		printf("node could not be added index %u\n", index);
+    print_dlistint(head);
+	printf("-----------------\n");
+	index = 10;
+    if (insert_dnodeint_at_index(&head, index, 12) == NULL)
+		printf("node could not be added index %u\n", index);
+    print_dlistint(head);
+	printf("-----------------\n");
+    if (insert_dnodeint_at_index(&head, index, 123) == NULL)
+		printf("node could not be added index %u\n", index);
+    print_dlistint(head);
     free_dlistint(head);
     head = NULL;
     return (EXIT_SUCCESS);
