@@ -2,6 +2,8 @@
 
 /**
  * key_index - gives you the index of a key
+ * @key: key to find
+ * @size: size of the array of the hash table
  *
  * Return:  index at which the key/value pair
  * 	should be stored in the array of the hash table
