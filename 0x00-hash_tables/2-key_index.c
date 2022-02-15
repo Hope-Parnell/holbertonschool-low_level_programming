@@ -1,9 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * main - check the code for Holberton School students.
+ * key_index - gives you the index of a key
  *
- * Return: Always EXIT_SUCCESS.
+ * Return:  index at which the key/value pair
+ * 	should be stored in the array of the hash table
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
