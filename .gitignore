@@ -1,5 +1,4 @@
 *main*
 a.out
-0x1E-search_algorithms/create_skiplist.c
-0x1E-search_algorithms/free_skiplist.c
-0x1E-search_algorithms/print_skiplist.c
+0x1E-search_algorithms/skiplist/
+
